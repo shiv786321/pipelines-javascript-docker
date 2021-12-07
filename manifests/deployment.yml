@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shivajsimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shivajsimage
+  template:
+    metadata:
+      labels:
+        app: shivajsimage 
+    spec:
+      containers:
+        - name: shivajsimage 
+          image: shivaacr.azurecr.io/shivajsimage
+          ports:
+          - containerPort: 8080
